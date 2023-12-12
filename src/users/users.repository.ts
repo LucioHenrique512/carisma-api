@@ -8,8 +8,6 @@ export class UsersRepository {
   constructor(@InjectModel(User.name) private usersSchemaModel: Model<User>) {}
 
   create(data: User) {
-    console.log('Repository', data);
-
     const createUser = new this.usersSchemaModel(data);
     return createUser.save();
   }
