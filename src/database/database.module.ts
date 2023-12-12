@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import environments from 'src/config/environments';
 
+const env = environments();
+
 @Module({
-  imports: [ConfigModule, MongooseModule.forRoot('env.dbUrl')],
+  imports: [MongooseModule.forRoot(env.dbUrl)],
 })
 export class DatabaseModule {}
