@@ -1,0 +1,14 @@
+services:
+  mongodb:
+    image: mongo:6.0.8
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    restart: always
+  # redis:
+  #   container_name: redis-local
+  #   image: redis:7.0-alpine
+  #   ports:
+  #     - "6379:6379"
+  #   environment:
+  #     - REDIS_PASSWORD=XXZZZXDCD
